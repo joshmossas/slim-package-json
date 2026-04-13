@@ -77,7 +77,7 @@ export async function generateSlimPackageJson(args: GeneratePackageJsonArgs) {
     console.info(`Successfully wrote package.json to ${outputFile}`);
 }
 
-function addUsedDependencies(
+export function addUsedDependencies(
     fileContent: string,
     rootPackageJson: PackageJson,
     childPackageJson: PackageJson,
@@ -89,7 +89,7 @@ function addUsedDependencies(
             fileContent.includes(`from '${key}`) ||
             fileContent.includes(`from "${key}`) ||
             fileContent.includes(`require('${key}`) ||
-            fileContent.includes(`require("${key})`)
+            fileContent.includes(`require("${key}`)
         ) {
             if (!childPackageJson.dependencies) {
                 childPackageJson.dependencies = {};
