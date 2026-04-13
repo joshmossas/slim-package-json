@@ -1,6 +1,6 @@
 {
     "name": "slim-package-json",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "A cli tool for creating generating a package.json for containers that only includes the dependencies that were actually used",
     "main": "./dist/index.mjs",
     "types": "./dist/index.d.ts",
