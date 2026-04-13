@@ -1,34 +1,36 @@
 {
-    "name": "slim-package-json",
-    "version": "0.1.1",
-    "description": "A cli tool for creating generating a package.json for containers that only includes the dependencies that were actually used",
-    "main": "./dist/index.mjs",
-    "types": "./dist/index.d.ts",
-    "type": "module",
-    "bin": {
-        "slim-package-json": "./dist/cli.mjs"
-    },
-    "exports": {
-        ".": {
-            "import": "./dist/index.mjs",
-            "require": "./dist/index.cjs",
-            "types": "./dist/index.d.ts"
-        }
-    },
-    "scripts": {
-        "build": "unbuild"
-    },
-    "keywords": [],
-    "author": "joshmossas",
-    "license": "MIT",
-    "dependencies": {
-        "citty": "^0.2.2",
-        "globby": "^16.2.0"
-    },
-    "devDependencies": {
-        "@types/node": "^25.6.0",
-        "prettier": "^3.8.2",
-        "unbuild": "^3.6.1",
-        "vitest": "^4.1.4"
+  "name": "slim-package-json",
+  "version": "0.1.2",
+  "description": "A cli tool for creating generating a package.json for containers that only includes the dependencies that were actually used",
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "bin": {
+    "slim-package-json": "./dist/cli.mjs"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
     }
+  },
+  "scripts": {
+    "build": "unbuild"
+  },
+  "keywords": [],
+  "author": "joshmossas",
+  "license": "MIT",
+  "dependencies": {
+    "citty": "^0.2.2",
+    "dotenv": "^8.2.0",
+    "globby": "^16.2.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "prettier": "^3.8.2",
+    "unbuild": "^3.6.1",
+    "vitest": "^4.1.4"
+  }
 }
