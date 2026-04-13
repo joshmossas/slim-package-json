@@ -17,11 +17,11 @@ const slimPackageJson = defineCommand({
             description:
                 'Location of your package.json that contains all the potential dependencies. Usually this is at the monorepo root.',
         },
-        childPackageJson: {
+        extendFrom: {
             type: 'string',
-            alias: 'C',
+            alias: 'E',
             description:
-                'Location of the package.json for the child project within the monorepo. If specified the generated package json will inherit all the properties from this package json.',
+                'A package.json that you want to inherit properties from',
         },
     },
     async run({ args }) {

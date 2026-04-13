@@ -14,9 +14,13 @@ export type GeneratePackageJsonArgs = {
      */
     packageJson: string;
     /**
-     * package.json of a sub package in the monorepo that you want to inherit properties from
+     * Path to a package.json that you want to inherit properties from.
+     *
+     * You might use this in a monorepo where all the dependencies are listed at the root but
+     * you have properties specific to one package in that package's directory that you want
+     * to preserve (such as engines, type, name, version, etc)
      */
-    childPackageJson?: string;
+    extendFrom?: string;
     /**
      * directory to check for used dependencies
      */
@@ -30,9 +34,9 @@ export async function generateSlimPackageJson(args: GeneratePackageJsonArgs) {
             encoding: 'utf8',
         }),
     ) as PackageJson;
-    const projectPackageJson = args.childPackageJson
+    const projectPackageJson = args.extendFrom
         ? (JSON.parse(
-              await readFile(path.resolve(args.childPackageJson), {
+              await readFile(path.resolve(args.extendFrom), {
                   encoding: 'utf8',
               }),
           ) as PackageJson)
