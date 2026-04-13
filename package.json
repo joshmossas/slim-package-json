@@ -5,6 +5,9 @@
     "main": "./dist/index.mjs",
     "types": "./dist/index.d.ts",
     "type": "module",
+    "bin": {
+        "slim-package-json": "./dist/cli.mjs"
+    },
     "exports": {
         ".": {
             "import": "./dist/index.mjs",
